@@ -1,13 +1,13 @@
 <script setup lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
-import HelloWorld from './components/HelloWorld.vue'
 import "./style.css"
+import Navbar from './components/Navbar.vue';
+import DashboardView from "./views/DashboardView.vue";
 </script>
 
 <template>
-  <h1 class="text-3xl font-bold underline">
-    Hello world!
-  </h1>
+  <Navbar />
+  <DashboardView />
 </template>
 
 <!-- <template>
@@ -27,7 +27,7 @@ import "./style.css"
   <RouterView />
 </template> -->
 
-<style scoped>
+<!-- <style scoped>
 header {
   line-height: 1.5;
   max-height: 100vh;
@@ -89,4 +89,4 @@ nav a:first-of-type {
     margin-top: 1rem;
   }
 }
-</style>
+</style> -->
