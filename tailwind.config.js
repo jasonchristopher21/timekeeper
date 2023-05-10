@@ -11,15 +11,17 @@ module.exports = {
     colors: {
       brick: "#f17720",
       orange: "#ffa630",
-      gray: "#f2f2f2",
+      slate: "#f2f2f2",
       cyan: "#00a7e1",
       blue: "#0474ba",
       black: "#1e1e1e",
-      white: "#ffffff"
+      white: "#ffffff",
+      dgray: "#6D6D6D"
     },
     fontFamily: {
-      sans: ["Poppins", "sans-serif"],
+      sans: ["Lato", "sans-serif"],
       serif: ["Arial", "serif"],
+      jakarta: ["Plus Jakarta Sans", "sans-serif"],
     },
     extend: {
       spacing: {
