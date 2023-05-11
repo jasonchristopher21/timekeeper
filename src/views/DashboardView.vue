@@ -1,5 +1,6 @@
 <script lang="ts">
 import DashboardCard from "../components/DashboardCard.vue"
+import Navbar from "../components/Navbar.vue"
 export default {
   data() {
     return {
@@ -8,11 +9,13 @@ export default {
   },
   components: {
     DashboardCard,
+    Navbar,
   }
 }
 </script>
 
 <template>
+  <Navbar />
   <div class="px-10 py-10">
     <div class="header">
       <div class="text-4xl text-black font-jakarta font-bold">

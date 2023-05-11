@@ -6,7 +6,6 @@ import DashboardView from "./views/DashboardView.vue";
 </script>
 
 <template>
-  <Navbar />
   <DashboardView />
 </template>
 
