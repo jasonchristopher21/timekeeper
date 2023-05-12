@@ -1,6 +1,8 @@
 <script lang="ts">
+import type EditDeckCardVue from "@/components/EditDeckCard.vue"
 import DashboardCard from "../components/DashboardCard.vue"
 import Navbar from "../components/Navbar.vue"
+import EditDeckCard from "../components/EditDeckCard.vue"
 export default {
   data() {
     return {
@@ -10,7 +12,8 @@ export default {
   components: {
     DashboardCard,
     Navbar,
-  }
+    EditDeckCard
+}
 }
 </script>
 
@@ -22,13 +25,15 @@ export default {
         Presentation Name
       </div>
       <div class="text-xl text-dgray mt-2 font-jakarta font-semibold ">
-        Ready to timekeep your presentation today? :D
+        Total time: <b>XX:XX</b>
       </div>
     </div>
-    <div class="grid grid-cols-3 gap-5 mt-10">
-      <DashboardCard />
-      <DashboardCard />
+
+    <!-- TIME CARDS -->
+    <div class="mt-10">
+      <EditDeckCard />
     </div>
+    
   </div>
 </template>
   
