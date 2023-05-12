@@ -9,6 +9,11 @@ export async function getAllDecks() {
     return await response.json();
 }
 
+export async function getSpecificDeck(deckId : string) {
+    const response = await fetch(API_URL + '/decks/' + deckId)
+    return await response.json()
+}
+
 export async function createDeck(data : any) {
     const response = await fetch(API_URL + '/decks/', {
         method: 'POST',

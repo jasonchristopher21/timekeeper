@@ -7,7 +7,7 @@ export default {
   data() {
     return {
       name: "Jason",
-      decks: [{ name: "", date: "", last_modified: "" }],
+      decks: [{ id: "", name: "", date: "", last_modified: "" }],
       numberOfDecks: 0,
     }
   },
@@ -18,7 +18,6 @@ export default {
   methods: {
     getAllDecks() {
       getAllDecks().then(response => {
-        console.log(response)
         this.decks = response
         this.numberOfDecks = this.decks.length
       })
@@ -45,6 +44,7 @@ export default {
       <DashboardCard 
         v-for="(data, index) in decks" 
         :key="index" 
+        :id="data.id"
         :title="data.name" 
         :date="data.date" 
         :last_modified="data.last_modified"

@@ -10,7 +10,8 @@ export default {
     props: {
         title: String,
         date: String,
-        last_modified: String
+        last_modified: String,
+        id: String,
     },
     methods: {
         parseDate(date: string) {
