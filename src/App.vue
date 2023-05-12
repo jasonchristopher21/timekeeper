@@ -6,7 +6,7 @@ import DashboardView from "./views/DashboardView.vue";
 </script>
 
 <template>
-  <DashboardView />
+  <RouterView />
 </template>
 
 <!-- <template>
