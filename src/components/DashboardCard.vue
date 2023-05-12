@@ -1,7 +1,29 @@
-<script setup lang="ts">
+<script lang="ts">
 import { RouterLink, RouterView } from 'vue-router'
 import "../style.css"
 import styles from '../style';
+import type { parse } from '@vue/compiler-dom';
+import dayjs from 'dayjs'
+import relativeTime from 'dayjs/plugin/relativeTime';
+
+export default {
+    props: {
+        title: String,
+        date: String,
+        last_modified: String
+    },
+    methods: {
+        parseDate(date: string) {
+            const d = new Date(date)
+            const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"]
+            return d.getDate() + " " + months[d.getMonth()] + " " + d.getFullYear()
+        },
+        parseLastModified(date: string) {
+            dayjs.extend(relativeTime)
+            return dayjs(date).fromNow()
+        }
+    }
+}
 </script>
 
 <template>
@@ -13,13 +35,13 @@ import styles from '../style';
             </div>
             <div class="col-span-2 p-5">
                 <div class="text-2xl text-black font-jakarta font-bold">
-                    Presentation 1
+                    {{ title || 'no props' }}
                 </div>
                 <div class="text-lg text-dgray mt-2 font-lato font-semibold">
-                    17 June 2023
+                    <span v-if="date">{{ parseDate(date) }}</span>
                 </div>
                 <div class="text-sm text-dgray mt-2 font-lato font-regular opacity-60 italic">
-                    Last modified 17 April 2023
+                    <span v-if="last_modified">Last modified {{ parseLastModified(last_modified) }}</span>
                 </div>
             </div>
         </div>

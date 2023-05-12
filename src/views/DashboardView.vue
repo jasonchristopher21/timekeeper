@@ -1,15 +1,31 @@
 <script lang="ts">
 import DashboardCard from "../components/DashboardCard.vue"
 import Navbar from "../components/Navbar.vue"
+import { getAllDecks, createDeck } from "@/services/DeckService"
+
 export default {
   data() {
     return {
-      name: "Jason"
+      name: "Jason",
+      decks: [{ name: "", date: "", last_modified: "" }],
+      numberOfDecks: 0,
     }
   },
   components: {
     DashboardCard,
     Navbar,
+  },
+  methods: {
+    getAllDecks() {
+      getAllDecks().then(response => {
+        console.log(response)
+        this.decks = response
+        this.numberOfDecks = this.decks.length
+      })
+    }
+  },
+  mounted() {
+    this.getAllDecks()
   }
 }
 </script>
@@ -26,8 +42,13 @@ export default {
       </div>
     </div>
     <div class="grid grid-cols-3 gap-5 mt-10">
-      <DashboardCard />
-      <DashboardCard />
+      <DashboardCard 
+        v-for="(data, index) in decks" 
+        :key="index" 
+        :title="data.name" 
+        :date="data.date" 
+        :last_modified="data.last_modified"
+      ></DashboardCard>
     </div>
   </div>
 </template>
