@@ -16,7 +16,10 @@ module.exports = {
       blue: "#0474ba",
       black: "#1e1e1e",
       white: "#ffffff",
-      dgray: "#6D6D6D"
+      dgray: "#6D6D6D",
+      others: {
+        100: "#f58c1f"
+      }
     },
     fontFamily: {
       sans: ["Lato", "sans-serif"],
