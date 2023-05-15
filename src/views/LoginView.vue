@@ -9,9 +9,9 @@ export default {
 </script>
 
 <template>
-    <Navbar />
-    <div class="max-h-screen">
-        <section class="border-red-500 bg-gray-200 mt-20 flex items-center justify-center">
+    <div class="flex flex-col h-screen">
+        <div class=" w-full z-50"><Navbar /></div>
+        <section class="flex flex-col items-center justify-center flex-1">
             <div class="bg-white p-10 flex rounded-2xl shadow-lg max-w-[70%]">
                 <div class="md:w-1/2 px-5">
                     <h2 class="text-2xl font-bold text-[#002D74]">Login</h2>
@@ -80,12 +80,11 @@ export default {
 
 <!-- <template>
     <Navbar />
-    <div class="grid grid-cols-11 bg-others-100">
-        <div class="bg-white m-20 rounded-3xl col-span-5">
-        Login to your account!
-    </div>
-    <div class="col-span-6">
+    <div class="grid grid-cols-2 bg-[url('@/assets/alarmvector.jpg')]">
+        <div class="bg-white m-20 rounded-3xl max-h-screen">
         <img src="@/assets/alarmvector.jpg">
+    </div>
+    <div class="col-span-1">
     </div>
     </div>
 </template> -->
